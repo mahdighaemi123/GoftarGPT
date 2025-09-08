@@ -30,55 +30,14 @@ Follow these steps to get your own instance of the bot up and running.
 ### 2\. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/VoiceGPT-Telegram-Bot.git
-cd VoiceGPT-Telegram-Bot
+git clone https://github.com/mahdighaemi123/GoftarGPT
+cd GoftarGPT
 ```
 
-### 3\. Install Dependencies
-
-It's highly recommended to use a virtual environment.
+### 3\. Run the Bot
 
 ```bash
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-
-# Install the required packages
-pip install -r requirements.txt
-```
-
-You'll need a `requirements.txt` file:
-
-```txt
-# requirements.txt
-python-telegram-bot
-httpx
-python-dotenv
-```
-
-### 4\. Configure Environment Variables
-
-Create a file named `.env` in the root directory of the project and add your credentials.
-
-```dotenv
-# .env file
-
-# Get this from @BotFather on Telegram
-BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
-
-# Your API key for the audio processing service
-METIS_API_KEY="YOUR_API_KEY_HERE"
-
-# A secret code for users to gain VIP access
-VIP_CODE="SUPER_SECRET_CODE_123"
-```
-
-### 5\. Run the Bot
-
-Once the dependencies are installed and the `.env` file is configured, you can start the bot:
-
-```bash
-python bot.py
+docker compose up -d
 ```
 
 The bot will create a `data/` directory automatically to store logs and state files. You should see a log message in your console confirming that the bot is running.
@@ -98,7 +57,7 @@ The bot will create a `data/` directory automatically to store logs and state fi
 ## 📂 Project Structure
 
 ```
-/VoiceGPT-Telegram-Bot
+/
 |
 |-- data/                 # Auto-generated for logs and state
 |   |-- files/            # Temporary storage for downloaded audio files
@@ -108,5 +67,7 @@ The bot will create a `data/` directory automatically to store logs and state fi
 |
 |-- .env                  # Your secret credentials (you must create this)
 |-- requirements.txt      # List of Python dependencies
+|-- Dockerfile            # Docker file details
+|-- docker-compose.yaml   # Docker compose details
 `-- bot.py                # The main application script
 ```
